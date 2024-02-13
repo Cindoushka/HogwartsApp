@@ -40,3 +40,7 @@ var professors : [Professor] = [ Professor(name: "Minerva McGonagall", house: .g
                                  Professor(name: "Sybille Trelawney", house: .raven, subject: .divination, isHeadmaster: false, isDirector: false, image: "trelawney"),
                                  Professor(name: "Rubeus Hagrid", house: .gryf, subject: .animals, isHeadmaster: false, isDirector: false, image: "hagrid")
 ]
+
+
+var users: [User] = [ User(pseudo: "Cindoushka", image: "cindie", house: .raven, numberOfPoints: 127, age: 31, ville: "Lille", isConnected: true, isMainUser: true, coverPicture: "covercindie")
+]

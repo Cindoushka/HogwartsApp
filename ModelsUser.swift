@@ -19,7 +19,9 @@ struct Student: Identifiable {
     var image: String
 }
 
-enum Houses: String {
+enum Houses: String , CaseIterable, Identifiable {
+    var id: String { return self.rawValue }
+
     case gryf = "Gryffondor"
     case raven = "Serdaigle"
     case slyth = "Serpentard"
@@ -49,3 +51,26 @@ enum Subjects: String {
     case botanique = "Botanique"
     case history = "Histoire de la Magie"
 }
+
+
+struct User: Identifiable {
+    var id = UUID()
+    var pseudo : String
+    var image: String
+    var house: Houses
+    var numberOfPoints: Int
+    var age: Int
+    var ville: String
+    var isConnected: Bool
+    var isMainUser: Bool
+    var coverPicture: String
+}
+
+
+func filteredStudentsByHouse(maison: Houses) -> [Student] {
+    let filteredStudentByHouses = students.filter { student in
+        student.house.id == maison.id
+    }
+    return filteredStudentByHouses
+}
+

@@ -14,22 +14,22 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "eyeglasses")
                 }
-            StudentsList()
-                .tabItem {
-                    Image(systemName: "graduationcap.fill")
-                }
+//            StudentsList()
+//                .tabItem {
+//                    Image(systemName: "graduationcap.fill")
+//                }
             HomePage()
                 .tabItem {
                     Image(systemName: "bolt.fill")
                 }
-            QuizRoom()
+            QuestionsModeDegueu(color: .constant(.black))
                 .tabItem {
                     Image(systemName: "gamecontroller.fill")
                 }
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person.fill")
-                }
+//            ProfileView(user: user)
+//                .tabItem {
+//                    Image(systemName: "person.fill")
+//                }
         }
         .background(.black)
     }

@@ -8,8 +8,47 @@
 import SwiftUI
 
 struct SearchBarView: View {
+    
+    @State var searchText: String = ""
+    
+    var studentFiltered : [Student] {
+        if searchText == "" {
+            return students
+        } else {
+            return students.filter {
+                $0.name.lowercased().contains(searchText.lowercased())
+            }
+        }
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
+        VStack {
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.gray)
+                    .font(.system(size: 20))
+                
+                TextField("Search", text: $searchText)
+                    .font(.system(size: 20))
+                            
+                Button {
+                    searchText = ""
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.system(size: 20))
+                        .foregroundColor(.gray)
+                }
+            }
+            .padding()
+            .background(.gray.opacity(0.3))
+            .cornerRadius(32)
+        .padding()
+            
+            List(studentFiltered) { student in
+                Text(student.name)
+            }
+        }
     }
 }
 

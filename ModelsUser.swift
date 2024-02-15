@@ -53,18 +53,19 @@ enum Subjects: String {
 }
 
 
-struct User: Identifiable {
-    var id = UUID()
-    var pseudo : String
-    var image: String
-    var house: Houses
-    var numberOfPoints: Int
-    var age: Int
-    var ville: String
-    var isConnected: Bool
-    var isMainUser: Bool
-    var coverPicture: String
-}
+//struct User: Identifiable {
+//    var id = UUID()
+//    var pseudo : String
+//    var image: String
+//    var house: Houses
+//    var numberOfPoints: Int
+//    var age: Int
+//    var ville: String
+//    var isConnected: Bool
+//    var isMainUser: Bool
+//    var coverPicture: String
+//    var year: Int
+//}
 
 
 func filteredStudentsByHouse(maison: Houses) -> [Student] {

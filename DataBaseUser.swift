@@ -42,5 +42,4 @@ var professors : [Professor] = [ Professor(name: "Minerva McGonagall", house: .g
 ]
 
 
-var users: [User] = [ User(pseudo: "Cindoushka", image: "cindie", house: .raven, numberOfPoints: 127, age: 31, ville: "Lille", isConnected: true, isMainUser: true, coverPicture: "covercindie")
-]
+

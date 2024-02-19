@@ -28,10 +28,12 @@ struct TestQuiz: View {
             VStack {
                 
                 HStack {
-                    Text("")
-                        .frame(width: ((width - 30) / CGFloat((quizes.mesQuiz[mainUser.user.year - 1].questions.count))) * CGFloat((quizes.mesQuiz[mainUser.user.year - 1].questions.filter { $0.isCompleted }.count)))
-                        .background(.purple)
-                        .cornerRadius(12)
+                    withAnimation(.easeInOut(duration: 0.7)){
+                        Text("")
+                            .frame(width: ((width - 30) / CGFloat((quizes.mesQuiz[mainUser.user.year - 1].questions.count))) * CGFloat((quizes.mesQuiz[mainUser.user.year - 1].questions.filter { $0.isCompleted }.count)))
+                            .background(.purple)
+                            .cornerRadius(12)
+                    }
                     
                     Spacer()
                 }

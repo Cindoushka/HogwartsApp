@@ -8,11 +8,37 @@
 import SwiftUI
 
 struct HomeQuizView: View {
+    
+    @EnvironmentObject var user : MainUser
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationStack {
+            ZStack {
+                Color(.purple.opacity(0.2))
+                
+                VStack {
+                    Image("choipeaux")
+                    
+                    Text("Vous êtes actuellement élève de \(user.user.year)e année à Poudlard. Êtes-vous prêt pour les examens de fin d'année ??")
+                        .padding(30)
+                        .font(.system(size: 24))
+                        .multilineTextAlignment(.center)
+                    
+                    NavigationLink {
+                        TestQuiz()
+                    } label: {
+                        Text("Oui!")
+                    }
+                }
+            }
+            .ignoresSafeArea()
+        }
+        .environmentObject(MainUser())
     }
 }
 
 #Preview {
     HomeQuizView()
+        .environmentObject(MainUser())
 }

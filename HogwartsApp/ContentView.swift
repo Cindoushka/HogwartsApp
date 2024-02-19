@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var mainUser: MainUser
+    @EnvironmentObject var quiz: QuizManager
+
     var body: some View {
         TabView {
             ProfessorsList()
@@ -22,7 +26,7 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "bolt.fill")
                 }
-            QuestionsModeDegueu(color: .constant(.black))
+            HomeQuizView()
                 .tabItem {
                     Image(systemName: "gamecontroller.fill")
                 }
@@ -32,9 +36,13 @@ struct ContentView: View {
 //                }
         }
         .background(.black)
+        .environmentObject(QuizManager())
+        .environmentObject(MainUser())
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(QuizManager())
+        .environmentObject(MainUser())
 }

@@ -75,3 +75,19 @@ func filteredStudentsByHouse(maison: Houses) -> [Student] {
     return filteredStudentByHouses
 }
 
+struct User: Identifiable {
+    var id = UUID()
+    var pseudo : String
+    var image: String
+    var house: Houses
+    var score: Int
+    var age: Int
+    var ville: String
+    var isConnected: Bool
+    var isMainUser: Bool
+    var coverPicture: String
+    var year: Int
+
+}
+
+

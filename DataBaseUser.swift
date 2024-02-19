@@ -43,3 +43,9 @@ var professors : [Professor] = [ Professor(name: "Minerva McGonagall", house: .g
 
 
 
+class MainUser: ObservableObject {
+   
+   @Published var user: User = User(pseudo: "Cindoushka", image: "cindie", house: .raven, score: 0, age: 31, ville: "Lille", isConnected: true, isMainUser: true, coverPicture: "covercindie", year: 1)
+
+}
+

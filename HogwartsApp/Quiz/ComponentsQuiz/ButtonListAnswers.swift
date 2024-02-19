@@ -13,8 +13,9 @@ struct ButtonListAnswers: View {
     @State var color : Color = .black
     
     var question: Question
-    var quiz: Quizz
+//    var quiz: Quizz
     @ObservedObject var mainUser: MainUser
+    var quiz: QuizManager
     
     var body: some View {
         Button {
@@ -22,17 +23,17 @@ struct ButtonListAnswers: View {
             if !question.isCompleted && question.validatePickedAnswer(reponses) {
                 color = .green
                 question.isCompleted = true
-                mainUser.user.score += (quiz.difficulty * 10 )
+                quiz.calculPoints(user: mainUser)
+                
             } else if !question.isCompleted && !question.validatePickedAnswer(reponses) {
                 color = .red
                 question.isCompleted = true
-                
             }
             
         } label: {
             Text(reponses)
         }
-        .font(.system(size: 24))
+        .font(.system(size: 20))
         .foregroundColor(.white)
         .frame(width: UIScreen.main.bounds.width - 80, height: 60)
         .background(color.opacity(0.8))

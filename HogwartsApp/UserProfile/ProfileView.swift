@@ -9,8 +9,8 @@
 //
 //struct ProfileView: View {
 //    
-//    let user: User
-//    
+//    @EnvironmentObject var mainUser: MainUser
+//
 //    var body: some View {
 //        VStack {
 //            ZStack {
@@ -31,5 +31,5 @@
 //
 //
 //#Preview {
-//    ProfileView(user: user)
+//    ProfileView()
 //}
